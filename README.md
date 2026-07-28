@@ -2,7 +2,7 @@
 
 Standalone [Model Context Protocol](https://modelcontextprotocol.io) server for [Cloudreve](https://cloudreve.org) **v4**. It authenticates with a registered **OAuth application** (authorization code + PKCE), then exposes file and local-cache tools over **stdio** for Cursor and other MCP clients.
 
-Not published on npm — run it with `npx` from the GitHub archive URL below.
+Not published on npm — run it with `npx` from GitHub (`github:SanderCokart/cloudreve-mcp`).
 
 ## Features
 
@@ -43,7 +43,7 @@ Add to `~/.cursor/mcp.json` (Windows: `%USERPROFILE%\.cursor\mcp.json`):
       "command": "npx",
       "args": [
         "-y",
-        "https://github.com/SanderCokart/cloudreve-mcp/archive/refs/heads/main.tar.gz"
+        "github:SanderCokart/cloudreve-mcp"
       ],
       "env": {
         "CLOUDREVE_BASE_URL": "https://cloud.example.com",
@@ -64,10 +64,12 @@ Reload MCP servers / restart Cursor, then call the **`authorize`** tool once. A 
 ### Run from the terminal
 
 ```bash
-npx -y https://github.com/SanderCokart/cloudreve-mcp/archive/refs/heads/main.tar.gz
+npx -y github:SanderCokart/cloudreve-mcp
 ```
 
 Set the same environment variables as in the Cursor `env` block before running.
+
+> Prefer `github:SanderCokart/cloudreve-mcp` over the GitHub `.tar.gz` archive URL. The archive install skips the package build on some platforms (notably Windows), so the `cloudreve-mcp` binary is missing.
 
 ## Environment
 
